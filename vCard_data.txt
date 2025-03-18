@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Jeet Pratap Singh; Rajput;;;
+FN: Jeet Pratap Singh Rajput
+TITLE: Mechanical Engineering Undergrad
+TEL:+91 XXX0X10XX0
+EMAIL: selfixron@gmail.com
+URL: https://www.linkedin.com/in/jeet-pratap-singh-rajput/
+END:VCARD
