@@ -9,7 +9,7 @@ if choice == "yes":
     try:
         with open("vCard_data.txt", "r", encoding="utf-8") as file:
             data = file.read()
-        filename = "vcard_qr.png"
+            filename = "vcard_qr.png"
     except FileNotFoundError:
         print("Error: vcard.txt file not found! Please create the file and add your vCard details.")
         exit(1)
