@@ -1,5 +1,6 @@
 import os
 import qrcode
+import platform
 
 # Ask user for QR code type
 choice = input("Do you want to generate a QR code for your vCard? (yes/no): ").strip().lower()
@@ -9,7 +10,7 @@ if choice == "yes":
     try:
         with open("vCard_data.txt", "r", encoding="utf-8") as file:
             data = file.read()
-            filename = "vcard_qr.png"
+            filename = "vCard_qr.png"
     except FileNotFoundError:
         print("Error: vcard.txt file not found! Please create the file and add your vCard details.")
         exit(1)
@@ -33,4 +34,12 @@ qr_image = qr.make_image(fill="black", back_color="white")
 qr_image.save(filename)
 
 print(f"QR Code saved as {filename}!")
-os.system(filename)  # Opens the QR code image automatically
+# Opens the QR code image automatically
+if platform.system() == "Windows":
+    os.startfile(filename)
+elif platform.system() == "Linux":
+    os.system(f"xdg-open {filename}")
+elif platform.system() == "Darwin":
+    os.system(f"open {filename}")
+else:
+    print("Problem finding the system.")
